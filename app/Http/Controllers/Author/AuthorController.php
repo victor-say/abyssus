@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Author;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreAuthorRequest;
 use Illuminate\Http\Request;
 use App\Models\Author;
 
@@ -23,7 +24,7 @@ class AuthorController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(StoreAuthorRequest $request)
     {
         Author::create($request->all());
         
