@@ -5,9 +5,8 @@
 
 @section('content')
 
-
-
     <h2>Detalhes do Livro {{ $book->name}}</h2>
+
     <ul>
         <li>ID: {{ $book->id}}</li>
         <li>Nome: {{ $book->name}}</li>

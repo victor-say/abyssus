@@ -2,10 +2,11 @@
 
 namespace App\Http\Requests;
 
-
 use Illuminate\Foundation\Http\FormRequest;
+use App\Http\Requests\StoreBookRequest;
 
-class StoreBookRequest extends FormRequest
+
+class UpdateBookRequest extends  StoreBookRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,15 +23,8 @@ class StoreBookRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
-            'name' => 'required|string|max:255|min:3',
-            'author' => 'required|string|max:255|min:3', 
-            'pages' => 'required|numeric',
-            'publisher' => 'required|string', 
-            'universe' => 'required|string', 
-            'synopsis' => 'required|string', 
-            'genero' => 'required|string', 
-            'public' =>'required|string',
-        ];
+        $rules = parent::rules();
+
+        return  $rules;
     }
 }

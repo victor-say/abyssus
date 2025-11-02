@@ -15,7 +15,7 @@
         <li>class: {{ $user->class}}</li>
     </ul>
     @can('is-admin')
-        <form action="{{ route('users.destroy', $user->id) }}" method="POST" onsubmit="return confirm('Tem certeza que deseja deletar?')">
+        <form action="{{ route('users.destroy', $user->id) }}" method="POST" onsubmit="return confirm('Tem certeza que deseja deletar o usuário {{$user->name}}?')">
             @csrf
             @method('DELETE')
             <button type="submit" class="btn btn-danger">Deletar</button>
