@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Book;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreBookRequest;
 use Illuminate\Http\Request;
 use App\Models\Book;
 
@@ -23,9 +24,11 @@ class BookController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(StoreBookRequest $request)
     {
-        //
+        Book::create($request->all());   
+
+        return redirect()->route('books.index') -> with('success', ' Livro cadastrado com sucesso');
     }
 
     public function show(string $id)

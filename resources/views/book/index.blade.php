@@ -6,7 +6,17 @@
 
     <h1>Livros</h1>
 
+    @if (session()->has('success'))
+        {{ session('success')}}        
+    @endif
+    
+    @if (session('message'))
+        <p>{{ session('message') }}</p>
+    @endif
+
     <p><a href="{{ route('books.create')}}">Novo</a></p>
+
+    
     <table>
         <thead>
             <tr>

@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Requests\StoreUserRequest;
-use App\Http\Requests\UpdateUserRequest;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\{Gate, Hash};
+use App\Http\Controllers\Controller;
+use App\Http\Requests\{StoreUserRequest, UpdateUserRequest};
 use App\Models\user;
 
 class UserController extends Controller

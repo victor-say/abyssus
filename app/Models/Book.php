@@ -6,14 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Book extends Model
 {
+    public $timestamps = false;
+
     protected $fillable = [
-        'name',     //nome
-        'author',   //autor
-        'pages',    //paginas
-        'publisher',//editora
-        'universe', //universo 
-        'synopsis', //sinopse
-        'genero',   //genero
-        'public',   //publico alvo
+        'name', 'author', 'pages', 'publisher', 'universe', 'synopsis', 'genero', 'public'
     ];
 }
