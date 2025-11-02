@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 
 
-@section('title', 'detalhes do Usuário')
+@section('title', 'detalhes do Autor')
 
 @section('content')
 
