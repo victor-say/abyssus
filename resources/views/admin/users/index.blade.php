@@ -15,9 +15,9 @@
         <p>{{ session('message') }}</p>
     @endif
 
-
-    <p>(<a href="{{ route('users.create')}}">Novo</a>)</p>
-    
+    @can('is-admin')
+        <p>(<a href="{{ route('users.create')}}">Novo</a>)</p>
+    @endcan
     <table>
         <thead>
             <tr>

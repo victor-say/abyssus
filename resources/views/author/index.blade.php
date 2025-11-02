@@ -15,9 +15,9 @@
         <p>{{ session('message') }}</p>
     @endif
 
-
-    <p>(<a href="{{ route('authors.create')}}">Novo</a>)</p>
-    
+    @can('is-admin')
+        <p>(<a href="{{ route('authors.create')}}">Novo</a>)</p>
+    @endcan
 
     <table>
         <thead>
@@ -35,10 +35,10 @@
                     <td>{{ $author->genero }}</td>
                     <td>{{ $author->main_Works }}</td>
                     <td>
-                        <a href="{{ route('authors.edit', $authors->id) }}">Editar</a>
+                        <a href="{{ route('authors.edit', $author->id) }}">Editar</a>
                     </td>
                     <td>
-                        <a href="{{ route('authors.show', $authors->id) }}">Detalhes</a>
+                        <a href="{{ route('authors.show', $author->id) }}">Detalhes</a>
                     </td>
                 </tr>
             @empty

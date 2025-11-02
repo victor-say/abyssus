@@ -22,6 +22,6 @@ class CheckIfIsAdmin
         }
 
 
-        return redirect()->route('dashboard');
+        return redirect()->route('home');
     }
 }

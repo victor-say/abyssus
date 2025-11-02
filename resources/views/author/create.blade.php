@@ -1,4 +1,4 @@
-@extends('authors.layouts.app')
+@extends('author.layouts.app')
 
 @section('title', 'Cadastrar Novo Autor')
 
@@ -16,8 +16,6 @@
         </ul>
     @endif
     
-        'name', 'genero', 'main_Works'
-
     <form action="{{route('authors.store')}}" method="post">
         @csrf
         <label>Nome</label>
@@ -27,7 +25,10 @@
         <input type="text" name='genero' placeholder="Principal gênero de escrita" value='{{old('genero')}}'>
         
         <label>Principais Obras</label>
-        <input type="text" name='main_Works' placeholder="Suas Principais Obras">
+        <input type="text" name='main_Works' placeholder="Suas Principais Obras" value='{{old('main_Works')}}'>
+        
+        <label>Principal Publico</label>
+        <input type="text" name='public_' placeholder="Seu Publico principal" value='{{old('public_')}}'>
         
         <button type="submit">Enviar</button>
     </form>

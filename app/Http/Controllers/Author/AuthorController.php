@@ -19,13 +19,15 @@ class AuthorController extends Controller
 
     public function create()
     {
-        return view('authors.create');
+        return view('author.create');
     }
 
 
     public function store(Request $request)
     {
-        //
+        Author::create($request->all());
+        
+        return redirect()->route('authors.index') -> with('success', '  Autor cadastrado com sucesso');
     }
 
 

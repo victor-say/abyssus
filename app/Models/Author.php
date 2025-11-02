@@ -9,7 +9,7 @@ class Author extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'name', 'genero', 'main_Works'
+        'name', 'genero', 'main_Works', 'public_'
     ];
 
 }
