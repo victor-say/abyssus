@@ -16,7 +16,7 @@
     @endif
 
 
-    <p>Novo (<a href="{{ route('users.create')}}">+</a>)</p>
+    <p>(<a href="{{ route('users.create')}}">Novo</a>)</p>
     
     <table>
         <thead>

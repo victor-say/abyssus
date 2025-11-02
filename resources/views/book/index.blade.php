@@ -6,6 +6,7 @@
 
     <h1>Livros</h1>
 
+    <p><a href="{{ route('books.create')}}">Novo</a></p>
     <table>
         <thead>
             <tr>
