@@ -4,12 +4,13 @@
 
 @section('content') 
 
+    <h1>Editar Livro {{$book->name}}</h1>
+
+    <a href="{{ route('books.index') }}">Voltar(<)</a>
         
     <form action="{{ route('books.update', $book->id)}}" method="post"> 
         @csrf() 
         @method('put') 
-
-        <h1>Editar Livro {{$book->name}}</h1>
 
         @if ($errors->any)
             <ul>
