@@ -54,9 +54,24 @@ class BookController extends Controller
     
     public function update(Request $request, string $id)
     {
-        //
-    }
+        if(!$book = Book::find($id)){
+            return redirect()->route('book.index')->with('message', 'Livro não foi encontrado');
+        }
 
+        $book->update($request->only([
+            'name', 
+            'author', 
+            'pages', 
+            'publisher', 
+            'universe', 
+            'synopsis', 
+            'genero', 
+            'public',
+        ]));
+
+        return redirect()->route('books.index')->with('message', 'Livro editado com sucesso');
+        
+    }
 
     public function destroy(string $id)
     {
