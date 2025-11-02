@@ -1,0 +1,25 @@
+@extends('admin.layouts.app')
+
+
+@section('title', 'detalhoes do Usuário')
+
+@section('content')
+
+
+
+    <h2>Detalhes do Usuário {{ $user->name}}</h2>
+    <ul>
+        <li>ID: {{ $user->id}}</li>
+        <li>Nome: {{ $user->name}}</li>
+        <li>E-mail: {{ $user->email}}</li>
+        <li>class: {{ $user->class}}</li>
+    </ul>
+    @can('is-admin')
+        <form action="{{ route('users.destroy', $user->id) }}" method="POST" onsubmit="return confirm('Tem certeza que deseja deletar?')">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-danger">Deletar</button>
+        </form>
+    @endcan
+
+@endsection
