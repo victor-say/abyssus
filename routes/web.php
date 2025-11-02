@@ -5,7 +5,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\{PasswordController, UserController};
 use App\Http\Middleware\CheckIfIsAdmin;
 use App\Http\Controllers\Book\BookController;
-
+use App\Http\Controller\Author\AuthorController;
 
 
 //users
@@ -50,6 +50,15 @@ Route::get('/books/{book}/edit', [BookController::class, 'edit'])->name('books.e
 Route::put('/books/{book}', [BookController::class, 'update'])->name('books.update');
 Route::get('/books/{book}/delalheis', [BookController::class, 'show'])->name('books.show');
 Route::delete('/book/{book}/destroy',[BookController::class, 'destroy'])->name('books.destroy');
+
+//Authors
+Route::get('/authors',[AuthorController::class, 'index'])->name('authors.index');
+Route::get('/authors/create', [AuthorController::class, 'create'])->name('authors.create');
+Route::post('/authors', [AuthorController::class, 'store'])->name('authors.store');
+Route::get('/authors/{author}/edit', [AuthorController::class, 'edit'])->name('authors.edit');
+Route::put('/authors/{author}', [AuthorController::class, 'update'])->name('authors.update');
+Route::get('/authors/{author}/delalheis', [AuthorController::class, 'show'])->name('authors.show');
+Route::delete('/authors/{author}/destroy',[AuthorController::class, 'destroy'])->name('authors.destroy');
 
 
 
