@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Author;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Author;
 
 class AuthorController extends Controller
 {
@@ -12,13 +13,13 @@ class AuthorController extends Controller
     {
         $authors = Author::paginate(20);
 
-        return view('author.index', compact('author'));
+        return view('author.index', compact('authors'));
     }
 
 
     public function create()
     {
-        //
+        return view('authors.create');
     }
 
 

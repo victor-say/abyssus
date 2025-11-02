@@ -49,6 +49,6 @@
         </tbody>
     </table>
 
-    {{$users->links()}}
+    {{$authors->links()}}
 
 @endsection

@@ -22,7 +22,9 @@
                     <x-nav-link :href="route('books.index')" :active="request()->routeIs('')">
                         {{ __('Livros') }}
                     </x-nav-link>
-                    
+                    <x-nav-link :href="route('authors.index')" :active="request()->routeIs('')">
+                        {{ __('Autores') }}
+                    </x-nav-link>
                 </div>
             </div>
 
