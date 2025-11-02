@@ -34,13 +34,21 @@ class AuthorController extends Controller
 
     public function show(string $id)
     {
-        //
+        if (!$author = Author::find($id)) {
+            return redirect()->route('authors.index')->with('message', 'Autor não foi encontrado');
+        }
+
+        return view('author.show', compact ('author'));
     }
 
 
     public function edit(string $id)
     {
-        //
+        if(!$author= Author::find($id)){
+            return redirect()->route('authors.index')->with('message', 'Autor não foi encontrado');
+        }
+
+        return view('author.edit', compact('author'));
     }
 
 
