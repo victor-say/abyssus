@@ -7,6 +7,10 @@
 @section('content')
 <div>
 
+    <h1>Nova Usuário</h1>
+
+    <a href='{{route('users.index')}}'>Voltar(<)</a>
+
     <h2>Editar senha do Usuário</h2>
     @if(session('success'))
         <div style="color: green;">{{ session('success') }}</div>

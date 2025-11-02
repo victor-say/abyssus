@@ -8,6 +8,9 @@
 
 
     <h2>Detalhes do Usuário {{ $user->name}}</h2>
+    
+    <a href='{{route('users.index')}}'>Voltar(<)</a>
+    
     <ul>
         <li>ID: {{ $user->id}}</li>
         <li>Nome: {{ $user->name}}</li>
