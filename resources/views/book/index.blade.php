@@ -28,7 +28,7 @@
                 <th>Sinopse</th>
                 <th>Gênero</th>
                 <th>Publico Alvo</th>
-                <th colspan="3">Ações</th>
+                <th colspan='2'>Ações</th>
             </tr>
         </thead>
         <tbory>
@@ -43,13 +43,10 @@
                     <td>{{$book->genero}}</td>
                     <td>{{$book->public}}</td>
                     <td>
-                        <a >Ler</a>
+                        <a href="{{ route('books.edit', $book->id)}}">Editar</a>
                     </td>
                     <td>
-                        <a>Editar</a>
-                    </td>
-                    <td>
-                        <a href="{{ route('books.show', $book->id)}}"">Detalhes</a>
+                        <a href="{{ route('books.show', $book->id)}}">Detalhes</a>
                     </td>
                 </tr>
             @empty

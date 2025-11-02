@@ -34,7 +34,7 @@ class BookController extends Controller
     public function show(string $id)
     {
         if(!$book = Book::find($id)){
-            return redirect()->route('book.index')->with('message', 'Livro não encontrado');
+            return redirect()->route('book.index')->with('message', 'Livro não foi encontrado');
         }
 
         return view('book.show', compact('book'));
@@ -43,7 +43,11 @@ class BookController extends Controller
 
     public function edit(string $id)
     {
-        //
+        if(!$book = Book::find($id)){
+            return redirect()->route('book.index')->with('message', 'Livro não foi encontrado');
+        }
+
+        return view('book.edit', compact('book'));
     }
 
 
