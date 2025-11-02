@@ -2,7 +2,7 @@
 
 
 @section('title', 'Senha')
-
+ 
 
 @section('content')
 <div>
