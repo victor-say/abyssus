@@ -43,13 +43,13 @@
                     <td>{{$book->genero}}</td>
                     <td>{{$book->public}}</td>
                     <td>
-                        <a href="">Ler</a>
+                        <a >Ler</a>
                     </td>
                     <td>
-                        <a href="">Editar</a>
+                        <a>Editar</a>
                     </td>
                     <td>
-                        <a href="">Detalhes</a>
+                        <a href="{{ route('books.show', $book->id)}}"">Detalhes</a>
                     </td>
                 </tr>
             @empty
