@@ -19,7 +19,7 @@
         <li>Publico:  {{ $book->public}}</li>
     </ul>
     @can('is-admin')
-        <form action="{{ route('users.destroy', $book->id) }}" method="POST" onsubmit="return confirm('Tem certeza que deseja deletar?')">
+        <form action="{{ route('books.destroy', $book->id) }}" method="POST" onsubmit="return confirm('Tem certeza que deseja deletar o livro {{$book->name}}?')">
             @csrf
             @method('DELETE')
             <button type="submit" class="btn btn-danger">Deletar</button>
