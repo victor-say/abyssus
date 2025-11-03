@@ -54,7 +54,20 @@ class AuthorController extends Controller
 
     public function update(Request $request, string $id)
     {
-        //
+        if(!$author = Author::find($id)){
+            return redirect()->route('authors.index')->with('message', 'Autor não foi encontrado');
+        }
+
+        $author->update($request->only([
+            'name', 
+            'genero', 
+            'main_Works', 
+            'public_'
+
+        ]));
+
+        return redirect()->route('authors.index')->with('message', 'Author foi editado com sucesso');
+        
     }
 
 
