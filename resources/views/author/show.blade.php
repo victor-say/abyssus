@@ -9,8 +9,9 @@
 
     <h2>Detalhes do Autor {{ $author->name}}</h2>
     
-    <a href='{{route('authors.index')}}'>Voltar(<)</a>
-    
+
+    <p>Voltar<a href='{{route('authors.index')}}'>(<)</a></p>
+
     <ul>
         <li>ID: {{ $author->id}}</li>
         <li>Nome: {{ $author->name}}</li>

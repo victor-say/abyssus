@@ -6,8 +6,9 @@
 
     <h1>Cadastrar Novo Autor</h1>
 
-    <a href='{{route('authors.index')}}'>Voltar(<)</a>
     
+    <p>Voltar<a href='{{route('authors.index')}}'>(<)</a></p>
+
     @if ($errors->any)
         <ul>
             @foreach ($errors->all() as $error)

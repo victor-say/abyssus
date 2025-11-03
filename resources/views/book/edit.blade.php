@@ -6,7 +6,8 @@
 
     <h1>Editar Livro {{$book->name}}</h1>
 
-    <a href="{{ route('books.index') }}">Voltar(<)</a>
+    <p>Voltar<a href='{{route('books.index')}}'>(<)</a></p>
+
         
     <form action="{{ route('books.update', $book->id)}}" method="post"> 
         @csrf() 

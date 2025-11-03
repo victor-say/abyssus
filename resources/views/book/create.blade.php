@@ -6,7 +6,8 @@
 
     <h1>Cadastrar Novo Livro</h1>
 
-    <a href="{{ route('books.index') }}">Voltar(<)</a>
+
+    <p>Voltar<a href='{{route('books.index')}}'>(<)</a></p>
 
     @if ($errors->any)
         <ul>

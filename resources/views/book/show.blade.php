@@ -7,7 +7,9 @@
 
     <h2>Detalhes do Livro {{ $book->name}}</h2>
     
-    <a href="{{ route('books.index') }}">Voltar(<)</a>
+
+    <p>Voltar<a href='{{route('books.index')}}'>(<)</a></p>
+
 
     <ul>
         <li>ID: {{ $book->id}}</li>

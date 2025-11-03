@@ -9,7 +9,7 @@
 
     <h1>Nova Usuário</h1>
 
-    <a href='{{route('users.index')}}'>Voltar(<)</a>
+    <p>Voltar<a href='{{route('users.index')}}'>(<)</a></p>
 
     <h2>Editar senha do Usuário</h2>
     @if(session('success'))
