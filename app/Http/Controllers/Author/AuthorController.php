@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Author;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreAuthorRequest;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\{StoreAuthorRequest, UpdateAuthorRequest};
 use App\Models\Author;
 
 class AuthorController extends Controller
@@ -52,7 +52,7 @@ class AuthorController extends Controller
     }
 
 
-    public function update(Request $request, string $id)
+    public function update(UpdateAuthorRequest $request, string $id)
     {
         if(!$author = Author::find($id)){
             return redirect()->route('authors.index')->with('message', 'Autor não foi encontrado');
@@ -73,6 +73,12 @@ class AuthorController extends Controller
 
     public function destroy(string $id)
     {
-        //
+        if (!$author = Author::find($id)) {
+            return redirect()->route('authors.index')->with('message', 'Autor não foi encontrado');
+        }
+
+        $author->delete();
+
+        return redirect()->route('authors.index')->with('message', 'Autor deletado com sucesso');
     }
 }

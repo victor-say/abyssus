@@ -7,6 +7,8 @@
 
     <h1>Usuários</h1>
 
+    <p>Voltar <a href="{{ route('dashboard')}}">(<)</a></p>
+
     @if (session()->has('success'))
         {{ session('success')}}        
     @endif
@@ -19,7 +21,7 @@
         <p>(<a href="{{ route('users.create')}}">Novo</a>)</p>
     @endcan
     <table>
-        <thead>
+        <thead> 
             <tr>
                 <th>Nome</th>
                 <th>E-mail</th>

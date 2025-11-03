@@ -7,13 +7,15 @@
 
     <h1>Autores</h1>
 
+    <p>Voltar <a href="{{ route('dashboard')}}">(<)</a></p>
+
     @if (session()->has('success'))
         {{ session('success')}}        
     @endif
     
     @if (session('message'))
         <p>{{ session('message') }}</p>
-    @endif
+    @endif 
 
     @can('is-admin')
         <p>(<a href="{{ route('authors.create')}}">Novo</a>)</p>

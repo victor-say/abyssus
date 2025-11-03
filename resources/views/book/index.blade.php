@@ -6,6 +6,8 @@
 
     <h1>Livros</h1>
 
+    <p>Voltar <a href="{{ route('dashboard')}}">(<)</a></p>
+
     @if (session()->has('success'))
         {{ session('success')}}        
     @endif
