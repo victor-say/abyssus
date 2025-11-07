@@ -65,4 +65,14 @@ Route::delete('/authors/{author}/destroy',[AuthorController::class, 'destroy'])-
 
 
 
+//Universes
+Route::get('/universes',[UniverseController::class, 'index'])->name('universes.index');
+Route::get('/universes/create', [UniverseController::class, 'create'])->name('universes.create');
+Route::post('/universes', [UniverseController::class, 'store'])->name('universes.store');
+Route::get('/universes/{universe}/edit', [UniverseController::class, 'edit'])->name('universes.edit');
+Route::put('/universes/{universe}', [UniverseController::class, 'update'])->name('universes.update');
+Route::get('/universes/{universe}/delalheis', [UniverseController::class, 'show'])->name('universes.show');
+Route::delete('/universes/{universe}/destroy',[UniverseController::class, 'destroy'])->name('universes.destroy');
+
+
 require __DIR__.'/auth.php';
