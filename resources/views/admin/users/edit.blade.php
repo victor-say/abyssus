@@ -6,7 +6,6 @@
 
     <h1>Editar Usuário {{$user->name}}</h1>
 
-    <p>Voltar<a href='{{route('users.index')}}'>(<)</a></p>
 
     @if ($errors->any)
         <ul>

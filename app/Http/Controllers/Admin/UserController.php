@@ -32,7 +32,7 @@ class UserController extends Controller
         // ]);
         User::create($request->all());
         
-        return redirect()->route('users.index') -> with('success', ' Usuário criado com sucesso');
+        return redirect()->route('dashboard') -> with('success', ' Usuário criado com sucesso');
     }
 
     public function edit(string $id)

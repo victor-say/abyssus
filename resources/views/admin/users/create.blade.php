@@ -6,7 +6,6 @@
 
     <h1>novo Usuário</h1>
 
-    <a href='{{route('users.index')}}'>Voltar(<)</a>
     
     @if ($errors->any)
         <ul>
