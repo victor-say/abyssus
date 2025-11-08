@@ -1,0 +1,59 @@
+<?php
+
+namespace App\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+use App\Http\Requests\StoreUniverseRequest;
+
+
+class UpdateUniverseRequest extends StoreUniverseRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     */
+    public function authorize(): bool
+    {
+        return true;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
+     */
+    public function rules(): array
+    {
+        return [
+            'name' => [
+                'required',
+                'max:30',
+                'min:4',
+                'string',
+            ],
+            'author' => [
+                'required',
+                'max:30',
+                'min:4',
+                'string',
+            ],
+            'personagens' => [
+                'required',
+                'max:30',
+                'min:4',
+                'string',
+            ],
+            'books' => [
+                'required',
+                'max:30',
+                'min:4',
+                'string',
+            ],
+            'conceitos' => [
+                'required',
+                'max:30',
+                'min:4',
+                'string',
+            ],
+        ];
+    }
+}

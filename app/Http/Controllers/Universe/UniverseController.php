@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Universe;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Models\Universe;
-use App\Http\Requests\StoreUniverseRequest;
+use App\Http\Requests\{StoreUniverseRequest, UpdateUniverseRequest};
 
 
 class UniverseController extends Controller
@@ -50,7 +50,7 @@ class UniverseController extends Controller
     }
 
 
-    public function update(Request $request, string $id)
+    public function update(UpdateUniverseRequest $request, string $id)
     {
         if(!$universe = Universe::find($id)){
             return redirect()->route('universes.index')->with('message', 'Universe não foi encontrado');
