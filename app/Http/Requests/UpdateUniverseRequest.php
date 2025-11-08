@@ -29,6 +29,7 @@ class UpdateUniverseRequest extends StoreUniverseRequest
                 'max:30',
                 'min:4',
                 'string',
+                'unique'
             ],
             'author' => [
                 'required',

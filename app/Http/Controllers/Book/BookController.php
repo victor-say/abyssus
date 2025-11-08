@@ -16,7 +16,7 @@ class BookController extends Controller
 
         return view('book.index', compact('books'));
     }
-
+ 
      
     public function create()
     {
@@ -26,7 +26,7 @@ class BookController extends Controller
 
     public function store(StoreBookRequest $request)
     {
-        Book::create($request->all());   
+        Book::create($request->all());     
 
         return redirect()->route('books.index') -> with('success', ' Livro cadastrado com sucesso');
     }

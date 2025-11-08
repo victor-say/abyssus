@@ -19,7 +19,7 @@ class DemandController extends Controller
 
     public function create()
     {
-        //
+        return view('demand.create');
     }
 
     public function store(Request $request)

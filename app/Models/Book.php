@@ -9,6 +9,13 @@ class Book extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'name', 'author', 'pages', 'publisher', 'universe', 'synopsis', 'genero', 'public'
+        'name',
+        'author',
+        'pages',
+        'publisher',
+        'universe',
+        'synopsis',
+        'genero',
+        'public'
     ];
 }

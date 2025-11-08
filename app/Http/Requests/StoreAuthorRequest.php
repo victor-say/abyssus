@@ -26,7 +26,8 @@ class StoreAuthorRequest extends FormRequest
                 'required',
                 'string',
                 'max:255',
-                'min:3'
+                'min:3',
+                'unique'
             ], 
             'genero'=>[
                 'required',
