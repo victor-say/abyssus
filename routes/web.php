@@ -75,5 +75,13 @@ Route::put('/universes/{universe}', [UniverseController::class, 'update'])->name
 Route::get('/universes/{universe}/delalheis', [UniverseController::class, 'show'])->name('universes.show');
 Route::delete('/universes/{universe}/destroy',[UniverseController::class, 'destroy'])->name('universes.destroy');
 
+//Universes
+Route::get('/demands',[DemandController::class, 'index'])->name('demands.index');
+Route::get('/demands/create', [DemandController::class, 'create'])->name('demands.create');
+Route::post('/demands', [DemandController::class, 'store'])->name('demands.store');
+Route::get('/demands/{demand}/edit', [DemandController::class, 'edit'])->name('demands.edit');
+Route::put('/demands/{demand}', [DemandController::class, 'update'])->name('demands.update');
+Route::get('/demands/{demand}/delalheis', [DemandController::class, 'show'])->name('demands.show');
+Route::delete('/demands/{demands}/destroy',[DemandController::class, 'destroy'])->name('demands.destroy');
 
 require __DIR__.'/auth.php';
