@@ -17,7 +17,7 @@
 
 
 
-    <form action="{{route('universes.create')}}" method="post">
+    <form action="{{route('universes.store')}}" method="post">
         @csrf
         <label>Nome</label>
         <input type="text" name="name" placeholder="Nome do Universo" value="{{old('name')}}">

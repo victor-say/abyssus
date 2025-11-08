@@ -20,12 +20,11 @@ class UniverseController extends Controller
         return view('universe.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        Universe::create($request->all());
+
+        return redirect()->route('universes.index') ->with('success' , 'Usuário Criado Com Sucesso');
     }
 
     /**
