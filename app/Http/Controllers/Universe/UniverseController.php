@@ -4,15 +4,15 @@ namespace App\Http\Controllers\Universe;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Universe;
 
 class UniverseController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $universes = Universe::paginate(20);
+
+        return view('universe.index', compact('universes'));
     }
 
     /**

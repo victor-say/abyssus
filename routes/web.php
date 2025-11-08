@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\{PasswordController, UserController};
 use App\Http\Middleware\CheckIfIsAdmin;
 use App\Http\Controllers\Book\BookController;
 use App\Http\Controllers\Author\AuthorController;
+use App\Http\Controllers\Universe\UniverseController;
 
 
 //users

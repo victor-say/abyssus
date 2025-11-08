@@ -24,18 +24,21 @@
     <table>
         <thead>
             <tr>
-                <th>Autor</th>
                 <th>Nome</th>
+                <th>Autor</th>
                 <th>Personagens</th>
                 <th>Livros</th>
-                <th>Magias</th>
-                <th>Ecologia</th>
                 <th>Conceitos</th>
                 <th colspan="2">Ações</th>
             </tr>
         </thead>
                 @forelse ($universes as $universe)
                 <tr>
+                    <td>{{ $universe->name }}</td>
+                    <td>{{ $universe->author }}</td>
+                    <td>{{ $universe->personagens}}</td>
+                    <td>{{ $universe->books }}</td>
+                    <td>{{ $universe->conceitos }}</td>
                     <td>
                         <a href="{{ route('universes.edit', $universe->id) }}">Editar</a>
                     </td>
@@ -50,4 +53,7 @@
             @endforelse
         </tbody>
     </table>
+
+    {{$universes->links()}}
+
 @endsection
