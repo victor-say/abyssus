@@ -20,7 +20,7 @@ class SolicitationController extends Controller
 
     public function create()
     {
-        //
+        return view('solicitation.create');
     }
 
 
