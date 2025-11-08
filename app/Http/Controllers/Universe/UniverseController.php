@@ -39,12 +39,14 @@ class UniverseController extends Controller
         return view('universe.show', compact ('universe'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
+
     public function edit(string $id)
     {
-        //
+        if(!$universe = Universe::find($id)){
+            return redirect()->route('universes.index')->with('message', 'Universo não foi encontrado');
+        }
+
+        return view('universe.edit', compact('universe'));
     }
 
     /**
