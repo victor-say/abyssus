@@ -13,7 +13,7 @@
                     {{ __("You're logged in!") }}
                 </div>
                 <div>
-                    <h1>oi, vc por aqui ?</h1>
+
                 </div>
             </div>
         </div>

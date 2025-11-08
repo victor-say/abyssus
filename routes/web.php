@@ -7,6 +7,8 @@ use App\Http\Middleware\CheckIfIsAdmin;
 use App\Http\Controllers\Book\BookController;
 use App\Http\Controllers\Author\AuthorController;
 use App\Http\Controllers\Universe\UniverseController;
+use App\Http\Controllers\Demand\DemandController;
+
 
 
 //users
