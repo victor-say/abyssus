@@ -25,7 +25,7 @@
         <input type="text" name='book_asks_' value='{{old('book_asks_')}}'>
 
         <label>Data do pedido</label>
-        <input type="date" name="" value="{{old('date_asks')}}">
+        <input type="date" name="date_asks" value="{{old('date_asks')}}">
 
         <button type="submit">Enviar</button>
     </form>
