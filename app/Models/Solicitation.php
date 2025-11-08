@@ -4,15 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Demand extends Model
+class Solicitation extends Model
 {
     public $timestamps = false;
 
     protected $fillable = [
-        'name_asks_',
-        'book_asks_',
-        'date_asks',
-        'note',
-        
+        'id_user',
+        'ask_',
+        'type_',
+        'timetamp_'
     ];
 }
+

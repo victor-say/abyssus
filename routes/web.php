@@ -7,7 +7,7 @@ use App\Http\Middleware\CheckIfIsAdmin;
 use App\Http\Controllers\Book\BookController;
 use App\Http\Controllers\Author\AuthorController;
 use App\Http\Controllers\Universe\UniverseController;
-use App\Http\Controllers\Demand\DemandController;
+use App\Http\Controllers\Solicitation\SolicitationController;
 
 
 
@@ -88,15 +88,16 @@ Route::middleware(CheckIfIsAdmin::class)->group(function () {
     Route::delete('/universes/{universe}/destroy',[UniverseController::class, 'destroy'])->name('universes.destroy');
 });
 
-//Demandas
-Route::middleware('auth')->group(function() {
-    Route::get('/demands',[DemandController::class, 'index'])->name('demands.index');
-    Route::get('/demands/create', [DemandController::class, 'create'])->name('demands.create');
-    Route::post('/demands', [DemandController::class, 'store'])->name('demands.store');
-    Route::get('/demands/{demand}/edit', [DemandController::class, 'edit'])->name('demands.edit');
-    Route::put('/demands/{demand}', [DemandController::class, 'update'])->name('demands.update');
-    Route::get('/demands/{demand}/delalheis', [DemandController::class, 'show'])->name('demands.show');
-    Route::delete('/demands/{demands}/destroy',[DemandController::class, 'destroy'])->name('demands.destroy');
+
+//solicitation
+Route::middleware('auth')->group(function () {
+    Route::get('/solicitations',[SolicitationController::class, 'index'])->name('solicitations.index');
+    Route::get('/solicitations/{solicitation}/delalheis', [SolicitationController::class, 'show'])->name('solicitations.show');
+    Route::get('/solicitations/create', [SolicitationController::class, 'create'])->name('solicitations.create');
+    Route::post('/solicitations', [SolicitationController::class, 'store'])->name('solicitations.store');
+    Route::get('/solicitations/{solicitation}/edit', [SolicitationController::class, 'edit'])->name('solicitations.edit');
+    Route::put('/solicitations/{solicitation}', [SolicitationController::class, 'update'])->name('solicitations.update');
+    Route::delete('/solicitations/{solicitation}/destroy',[SolicitationController::class, 'destroy'])->name('solicitations.destroy');
 });
 
 require __DIR__.'/auth.php';
