@@ -15,12 +15,9 @@ class UniverseController extends Controller
         return view('universe.index', compact('universes'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        return view('universe.create');
     }
 
     /**

@@ -18,7 +18,7 @@
     @endif 
 
     @can('is-admin')
-        <p>(<a href="{{ route('authors.create')}}">Novo</a>)</p>
+        <p>(<a href="{{ route('universes.create')}}">Novo</a>)</p>
     @endcan
 
     <table>
