@@ -17,9 +17,8 @@
         <p>{{ session('message') }}</p>
     @endif
 
-    @can('is-admin')
-        <p>(<a href="{{ route('demands.create')}}">Novo</a>)</p>
-    @endcan
+    <p>(<a href="{{ route('demands.create')}}">Novo</a>)</p>
+
     <table>
         <thead> 
             <tr>

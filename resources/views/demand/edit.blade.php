@@ -1,10 +1,10 @@
 @extends('demand.layouts.app')
 
-@section('title', 'Cadastrar Nova demanda')
+@section('title', 'Editar demanda')
 
 @section('content')
 
-    <h1>Cadastrar Nova demanda</h1>
+    <h1>Editar demanda</h1>
 
     
     <p>Voltar<a href='{{route('demands.index')}}'>(<)</a></p>
@@ -17,15 +17,12 @@
         </ul>
     @endif
     
-    <form action="{{route('demands.store')}}" method="post">
+    <form action="{{route('demands.store', $demand->id)}}" method="post">
         @csrf
         {{-- <input type="hidden" name="name_asks_" value="{{$user->id}}"> --}}
 
         <label>Nome do livro </label>
-        <input type="text" name='book_asks_' value='{{old('book_asks_')}}' placeholder="Digite Aqui o livro, obra ou uma sugestão para o nosso trabalho">
-
-        <label>Data do pedido</label>
-        <input type="date" name="date_asks" value="{{old('date_asks')}}">
+        <input type="text" name='book_asks_' value='{{ $demand->book_asks_}}'>
 
         <button type="submit">Enviar</button>
     </form>
