@@ -26,13 +26,17 @@ class UniverseController extends Controller
     {
         Universe::create($request->all());
 
-        return redirect()->route('universes.index') ->with('success' , 'Usuário Criado Com Sucesso');
+        return redirect()->route('universes.index') ->with('success' , 'Universo Criado Com Sucesso');
     }
 
 
     public function show(string $id)
     {
-        //
+        if (!$universe = Universe::find($id)) {
+                return redirect()->route('universes.index')->with('message', 'Universo não foi encontrado');
+            }
+
+        return view('universe.show', compact ('universe'));
     }
 
     /**
