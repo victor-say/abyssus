@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Universe;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Universe;
+use App\Http\Requests\StoreUniverseRequest;
+
 
 class UniverseController extends Controller
 {
@@ -20,16 +22,14 @@ class UniverseController extends Controller
         return view('universe.create');
     }
 
-    public function store(Request $request)
+    public function store(StoreUniverseRequest $request)
     {
         Universe::create($request->all());
 
         return redirect()->route('universes.index') ->with('success' , 'Usuário Criado Com Sucesso');
     }
 
-    /**
-     * Display the specified resource.
-     */
+
     public function show(string $id)
     {
         //
