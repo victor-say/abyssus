@@ -49,12 +49,23 @@ class UniverseController extends Controller
         return view('universe.edit', compact('universe'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+
     public function update(Request $request, string $id)
     {
-        //
+        if(!$universe = Universe::find($id)){
+            return redirect()->route('universes.index')->with('message', 'Universe não foi encontrado');
+        }
+
+        $universe->update($request->only([
+            'name', 
+            'author', 
+            'personagens',
+            'books',
+            'conceitos',
+        ]));
+
+        return redirect()->route('universes.index')->with('message', 'Universo foi editado com sucesso');
+        
     }
 
     /**
