@@ -65,14 +65,17 @@ class UniverseController extends Controller
         ]));
 
         return redirect()->route('universes.index')->with('message', 'Universo foi editado com sucesso');
-        
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+
     public function destroy(string $id)
     {
-        //
+        if (!$universe = Universe::find($id)) {
+            return redirect()->route('universes.index')->with('message', 'Universo não foi encontrado');
+        }
+
+        $universe->delete();
+
+        return redirect()->route('universes.index')->with('message', 'Universo deletado com sucesso');
     }
 }
