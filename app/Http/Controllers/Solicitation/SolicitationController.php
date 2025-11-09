@@ -60,13 +60,23 @@ class SolicitationController extends Controller
 
     }
 
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    public function update(Request $request, string $id)
+    {
+        if(!$solicitation = Solicitation::find($id)){
+            return redirect()->route('solicitations.index')->with('message', 'Solicitação não foi encontrada');
+        }
 
-    // public function update(Request $request, string $id)
-    // {
-    //     //
-    // }
+        $data = $request;
+
+        $solicitation ->update([
+            'type_' => $date['type_'],
+            'ask_' => $date['ask_'] 
+
+        ]);
+
+        return redirect()->route('solicitations.index')->with('message', 'Socilitação foi editada com sucesso');
+
+    }
 
 
     public function destroy(string $id)

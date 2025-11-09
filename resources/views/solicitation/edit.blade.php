@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <h1>Criar Nova Solicitação</h1>
+    <h1>Editar Solicitação</h1>
 
     
     @if ($errors->any)
