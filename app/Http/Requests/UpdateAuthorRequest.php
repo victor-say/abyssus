@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class UpdateAuthorRequest extends FormRequest
 {
@@ -27,7 +28,8 @@ class UpdateAuthorRequest extends FormRequest
                 'string',
                 'max:255',
                 'min:3',
-                'unique'
+                Rule::unique('authors', 'name')->ignore($this->author, 'id'),
+
             ], 
             'genero'=>[
                 'required',

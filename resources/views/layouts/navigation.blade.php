@@ -28,6 +28,9 @@
                     <x-nav-link :href="route('universes.index')" :active="request()->routeIs('')">
                         {{ __('Universos') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('solicitations.index')" :active="request()->routeIs('')">
+                        {{ __('Solicitações') }}
+                    </x-nav-link>
 
                 </div>
             </div>

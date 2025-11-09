@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers\Solicitation;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Requests\StoreSolicitationRequest;
-
+use App\Http\Controllers\Controller;
+use App\Http\Requests\{StoreSolicitationRequest, UpdateSolicitationRequest};
 use App\Models\Solicitation;
 
 
@@ -70,8 +69,8 @@ class SolicitationController extends Controller
 
         $solicitation ->update([
             'type_' => $date['type_'],
-            'ask_' => $date['ask_'] 
-
+            'ask_' => $date['ask_'],
+            'id_user'=> auth()->id(),
         ]);
 
         return redirect()->route('solicitations.index')->with('message', 'Socilitação foi editada com sucesso');
@@ -81,6 +80,13 @@ class SolicitationController extends Controller
 
     public function destroy(string $id)
     {
-        //
+        if (!$solicitation = Solicitation::find($id)) {
+            return redirect()->route('solicitations.index')->with('message', 'Solicitação não foi encontrada');
+        }
+
+        $solicitation->delete();
+
+        return redirect()->route('solicitations.index')->with('message', 'Solicitação deletada com sucesso');
+
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class StoreUniverseRequest extends FormRequest
 {
@@ -27,7 +28,8 @@ class StoreUniverseRequest extends FormRequest
                 'max:30',
                 'min:4',
                 'string',
-                'unique'
+                Rule::unique('universes', 'name')->ignore($this->universe, 'id'),
+
             ],
             'author' => [
                 'required',
