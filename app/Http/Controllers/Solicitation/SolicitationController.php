@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Solicitation;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreSolicitationRequest;
+
 use App\Models\Solicitation;
 
 
@@ -24,16 +26,28 @@ class SolicitationController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(StoreSolicitationRequest $request)
     {
-        //
+        $data = $request;//->validate();
+
+        Solicitation::create([
+            'id_user'=> auth()->id(),
+            'ask_'=> $data['ask_'],
+            'type_'=> $data['type_'],
+        ]);
+
+        return redirect()->route('solicitations.index') ->with('success' , 'Solicitação Criada Com Sucesso');
     }
 
 
 
     public function show(string $id)
     {
-        //
+        if (!$solicitation = Solicitation::find($id)) {
+                return redirect()->route('solicitations.index')->with('message', 'Solicitação não foi encontrada');
+            }
+
+        return view('solicitation.show', compact ('solicitation'));
     }
 
 

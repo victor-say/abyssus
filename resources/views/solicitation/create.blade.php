@@ -27,7 +27,7 @@
         </select>
 
         <label>Tipo De Solicitação</label>
-        <input type="text" name='ask_' placeholder="Escreva Sua Solicitação">
+        <input type="text" name='ask_' placeholder="Escreva Sua Solicitação" value="{{old('ask_')}}">
 
         <button type="submit">Enviar</button>
     </form>

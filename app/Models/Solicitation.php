@@ -12,7 +12,7 @@ class Solicitation extends Model
         'id_user',
         'ask_',
         'type_',
-        'timetamp_'
+        //'timetamp_'
     ];
 }
 

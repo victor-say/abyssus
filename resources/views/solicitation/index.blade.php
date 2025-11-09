@@ -26,7 +26,8 @@
                 <th>Usuário</th>
                 <th>Pedido</th>
                 <th>Tipo</th>
-                <th>Dia</th>
+                <th>Dia Que foi criado</th>
+                <th>Ultima vez Que foi editado</th>
 
                 <th colspan="2">Ações</th>
             </tr>
@@ -36,7 +37,8 @@
                     <td>{{$solicitation->id_user}}</td>
                     <td>{{$solicitation->ask_}}</td>
                     <td>{{$solicitation->type_}}</td>
-                    <td>{{$solicitation->timetamp}}</td>
+                    <td>{{$solicitation->created_at}}</td>
+                    <td>{{$solicitation->updated_at}}</td>
                     <td>
                         <a href="{{ route('solicitations.edit', $solicitation->id) }}">Editar</a>
                     </td>
