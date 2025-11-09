@@ -43,9 +43,8 @@ class SolicitationController extends Controller
 
     public function show(string $id)
     {
-        if (!$solicitation = Solicitation::find($id)) {
-                return redirect()->route('solicitations.index')->with('message', 'Solicitação não foi encontrada');
-            }
+
+        $solicitation = Solicitation::with('user')->findOrFail($id);
 
         return view('solicitation.show', compact ('solicitation'));
     }

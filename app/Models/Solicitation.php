@@ -12,7 +12,11 @@ class Solicitation extends Model
         'id_user',
         'ask_',
         'type_',
-        //'timetamp_'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
 
