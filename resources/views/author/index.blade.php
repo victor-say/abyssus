@@ -25,7 +25,7 @@
         <thead>
             <tr>
                 <th>Nome</th>
-                <th>Principal Gênero De escritas</th>
+                <th>Gênero De escritas</th>
                 <th>Principais obras</th>
                 <th colspan="2">Ações</th>
             </tr>
