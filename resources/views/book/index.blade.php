@@ -161,7 +161,7 @@
                         @empty
                             <tr>
                                 <td colspan="5" class="px-6 py-8 text-center text-gray-600">
-                                    Nenhum usuário encontrado no banco
+                                    Nenhum Livro encontrado no banco
                                 </td>
                             </tr>
                         @endforelse
