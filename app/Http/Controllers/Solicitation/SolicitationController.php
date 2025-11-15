@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Solicitation;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\{StoreSolicitationRequest, UpdateSolicitationRequest};
+use Carbon\Carbon;
 use App\Models\Solicitation;
 
 
@@ -27,13 +28,26 @@ class SolicitationController extends Controller
 
     public function store(StoreSolicitationRequest $request)
     {
-        $data = $request;//->validate();
-
+        
+        
         Solicitation::create([
-            'id_user'=> auth()->id(),
-            'ask_'=> $data['ask_'],
-            'type_'=> $data['type_'],
+            'id_user'   => auth()->id(),
+            'ask_'      => $request->ask_,
+            'type_'     => $request->type_,
+            'data_hora' => Carbon::now(), 
         ]);
+        
+        // $data = $request;
+
+        // $data_hora = Carbon::createFromFormat('Y-m-d\TH:i', $request->data_hora);
+
+
+        // Solicitation::create([
+        //     'id_user'=> auth()->id(),
+        //     'ask_'=> $data['ask_'],
+        //     'type_'=> $data['type_'],
+        //     'data_hora' => Carbon::now(),
+        // ]);
 
         return redirect()->route('solicitations.index') ->with('success' , 'Solicitação Criada Com Sucesso');
     }
@@ -65,13 +79,13 @@ class SolicitationController extends Controller
             return redirect()->route('solicitations.index')->with('message', 'Solicitação não foi encontrada');
         }
 
-        $data = $request;
 
-        $solicitation ->update([
-            'type_' => $date['type_'],
-            'ask_' => $date['ask_'],
-            'id_user'=> auth()->id(),
-        ]);
+        // $data = $request;
+
+        $solicitation ->update($request->only([
+            'type_',
+            'ask_' ,
+        ]));
 
         return redirect()->route('solicitations.index')->with('message', 'Socilitação foi editada com sucesso');
 

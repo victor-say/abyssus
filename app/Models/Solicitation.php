@@ -12,6 +12,9 @@ class Solicitation extends Model
         'id_user',
         'ask_',
         'type_',
+        'data_hora',
+        'data_hora_up',
+
     ];
 
     public function user()

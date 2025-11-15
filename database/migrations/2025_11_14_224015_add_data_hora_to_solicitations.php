@@ -11,10 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('solicitations', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-            $table->timestamp('data_hora')->nullable();
+        Schema::table('solicitations', function (Blueprint $table) {
+            //
         });
     }
 
@@ -23,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('solicitations');
+        Schema::table('solicitations', function (Blueprint $table) {
+            //
+        });
     }
 };

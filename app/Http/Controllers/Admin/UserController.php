@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\{Gate, Hash};
+use Illuminate\Support\Facades\{Auth, Gate, Hash};
 use App\Http\Controllers\Controller;
 use App\Http\Requests\{StoreUserRequest, UpdateUserRequest};
 use App\Models\user;
@@ -24,8 +24,20 @@ class UserController extends Controller
 
     public function store(StoreUserRequest $request )
     {
-        User::create($request->all());
+        // User::create($request->all());
         
+
+        $data = $request->validated();
+
+        $user = User::create([
+            'name'     => $data['name'],
+            'email'    => $data['email'],
+            'class'    => $data['class'],
+            'password' => Hash::make($data['password']),
+        ]);
+
+        Auth::login($user);
+
         return redirect()->route('dashboard') -> with('success', ' Usuário criado com sucesso');
     }
 
