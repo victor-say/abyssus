@@ -82,10 +82,14 @@ class SolicitationController extends Controller
 
         // $data = $request;
 
-        $solicitation ->update($request->only([
-            'type_',
-            'ask_' ,
-        ]));
+        
+        Solicitation::create([
+            'ask_'      => $request->ask_,
+            'type_'     => $request->type_,
+            'data_hora_up' => Carbon::now(), 
+        ]);
+
+
 
         return redirect()->route('solicitations.index')->with('message', 'Socilitação foi editada com sucesso');
 

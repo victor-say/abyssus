@@ -14,8 +14,8 @@
     <ul>
         <li>Tipo Da Solicitação: {{ $solicitation->type_}}</li>
         <li>Texto Da Solicitação: {{ $solicitation->ask_}}</li>
-        <li>Quando Foi Criado: {{ $solicitation->created_at}}</li>
-        <li>Ultima Vez Que foi Editado: {{ $solicitation->updated_at}}</li>
+        <li>Quando Foi Criado: {{ \Carbon\Carbon::parse($solicitation->data_hora)->format('d/m/Y H:i') }}</li>
+        <li>Ultima Vez Que foi Editado: {{ \Carbon\Carbon::parse($solicitation->data_hora_up)->format('d/m/Y H:i') }}</li>
 
     @can('is-admin')
         <li>Quem Criou A Solicitação: {{ $solicitation->id_user ?? 'Usuário Foi removido'}}</li>
