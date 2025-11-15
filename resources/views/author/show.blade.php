@@ -19,14 +19,6 @@
         <li>Principais Obras: {{ $author->main_Works}}</li>
         <li>Publico Alvo: {{ $author->public_}}</li>
     </ul>
-    @can('is-admin')
-        <form action="{{ route('authors.destroy', $author->id) }}" method="POST" onsubmit="return confirm('Tem certeza que deseja deletar o Autor {{$author->name}}?')">
-            @csrf
-            @method('DELETE')
-            <button type="submit" class="btn btn-danger">Deletar</button>
-        </form>
-    @endcan
-
 
 
     @can('is-admin')

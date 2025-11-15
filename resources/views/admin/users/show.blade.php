@@ -16,6 +16,7 @@
         <li>E-mail: {{ $user->email}}</li>
         <li>class: {{ $user->class}}</li>
     </ul>
+    
     @can('is-admin')
 
 
