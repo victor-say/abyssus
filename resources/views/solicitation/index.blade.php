@@ -2,6 +2,7 @@
 
 @section('title', 'Listagem de Solicitações')
 
+
 @section('content')
 
 

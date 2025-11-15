@@ -17,6 +17,10 @@
         <li>class: {{ $user->class}}</li>
     </ul>
     
+
+    <button  href="{{ route('users.show', $user->id) }}" >Editar</button>
+
+    
     @can('is-admin')
 
 

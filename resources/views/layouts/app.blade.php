@@ -6,7 +6,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        {{-- <title>{{ config('app.name', 'Laravel') }}</title> --}}
+        <title>@yield('title') - Abyssus</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -15,7 +16,7 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-mono  antialiased texto-sm">
         <div class="min-h-screen bg-gray-100">
             @include('layouts.navigation')
 
@@ -29,8 +30,11 @@
             @endisset
 
             <!-- Page Content -->
-            <main>
-                {{ $slot }}
+            <main class="font-mono  antialiased texto-sm bg-gray-700">
+                {{-- {{ $slot }} --}}
+
+                @yield('content')
+
             </main>
         </div>
     </body>

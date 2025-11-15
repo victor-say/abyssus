@@ -6,6 +6,11 @@ use Illuminate\Support\ServiceProvider;
 use App\Models\User;
 use Illuminate\Support\Facades\Gate;
 
+
+use Illuminate\Pagination\Paginator;
+
+
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -24,5 +29,7 @@ class AppServiceProvider extends ServiceProvider
         Gate::define('is-admin', function(User $user): bool{
             return $user->isAdm();
         });
+
+        Paginator::useTailwind();
     }
 }
