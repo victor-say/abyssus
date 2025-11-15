@@ -20,12 +20,36 @@
         <li>Livros Que O Apresenta: {{ $universe->books}}</li>
         <li>Conceitos que ele Apresenta: {{ $universe->conceitos}}</li>
     </ul>
+
+
     @can('is-admin')
-        <form action="{{ route('universes.destroy', $universe->id) }}" method="POST" onsubmit="return confirm('Tem certeza que deseja deletar o Universe {{$universe->name}}?')">
+
+
+        <form id="deleteForm{{ $universe->id }}" action="{{ route('universes.destroy', $universe->id) }}" method="POST" style="display:inline;">
             @csrf
             @method('DELETE')
-            <button type="submit" class="btn btn-danger">Deletar</button>
+            <button type="button" onclick="confirmDelete({{ $universe->id }})">Excluir</button>
         </form>
+
+        <script>
+        function confirmDelete(id) {
+            Swal.fire({
+                title: 'Tem certeza que deseja deletar o universo {{$universe->name}}?',
+                text: "Esta ação não pode ser desfeita!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sim, excluir!',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById('deleteForm' + id).submit();
+                }
+            });
+        }
+        </script>
+
     @endcan
 
 @endsection
