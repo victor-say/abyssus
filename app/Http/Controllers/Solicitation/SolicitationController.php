@@ -30,12 +30,12 @@ class SolicitationController extends Controller
     {
         
         
-        Solicitation::create([
+        Solicitation::create($request->only([
             'id_user'   => auth()->id(),
             'ask_'      => $request->ask_,
             'type_'     => $request->type_,
             'data_hora' => Carbon::now(), 
-        ]);
+        ]));
         
         // $data = $request;
 
@@ -83,7 +83,7 @@ class SolicitationController extends Controller
         // $data = $request;
 
         
-        Solicitation::create([
+        $solicitation->update([
             'ask_'      => $request->ask_,
             'type_'     => $request->type_,
             'data_hora_up' => Carbon::now(), 

@@ -19,7 +19,7 @@
                 @endforeach
             </ul>
         @endif
-
+ 
         <form action="{{ route('authors.store') }}" method="POST" class="space-y-4 ">
             @csrf
 
