@@ -4,48 +4,83 @@
 
 @section('content') 
 
-    <h1>Editar Livro {{$book->name}}</h1>
 
-    <p>Voltar<a href='{{route('books.index')}}'>(<)</a></p>
+    <div class="min-h-screen bg-gray-400 flex items-center justify-center p-6">
 
-        
-    <form action="{{ route('books.update', $book->id)}}" method="post"> 
-        @csrf() 
-        @method('put') 
+    <div class="w-full max-w-xl bg-zinc-300 p-8 rounded-lg shadow-lg shadow-indigo-500/50">
 
-        @if ($errors->any)
-            <ul>
+        <h1 class="text-2xl font-bold text-center mb-6">Editar Livro {{$book->name}}</h1>
+
+
+        @if ($errors->any())
+            <ul class="mb-4 bg-red-100 text-red-700 px-4 py-3 rounded">
                 @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
+                    <li class="text-sm">• {{ $error }}</li>
                 @endforeach
             </ul>
         @endif
+
+        <form action="{{ route('books.update', $book->id) }}" method="POST" class="space-y-4 ">
+            @csrf
+            @method('put')
+
+            <div>
+                <label class="block font-medium mb-1">Nome</label>
+                <input type="text" name="name" placeholder="Nome do livro" value="{{ $book->name }}" class="w-full px-4 py-2 rounded-full bg-white border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500">
+            </div>
+
+            <div>
+                <label class="block font-medium mb-1">Autor</label>
+                <input type="text" name="author" placeholder="Autor Do Livro" value="{{ $book->author }}"class="w-full px-4 py-2 rounded-[10vw] bg-white border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500">
+            </div>
+
+            <div>
+                <label class="block font-medium mb-1">Numero De Páginas</label>
+                <input type="number" name="pages" placeholder="Numero De Páginas" value="{{ $book->pages }}"class="w-full px-4 py-2 rounded-[10vw] bg-white border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500">
+            </div>
+
+            <div>
+                <label class="block font-medium mb-1">Editora</label>
+                <input type="text" name="publisher" placeholder="Editora Que o Publica" value="{{ $book->publisher }}" class="w-full px-4 py-2 rounded-[20vw] bg-white border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500">
+            </div>
+
+            <div>
+                <label class="block font-medium mb-1">Universo</label>
+                <input type="text" name="universe" placeholder="Universo A que pertence" value="{{ $book->universe }}" class="w-full px-4 py-2 rounded-full bg-white border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500">
+            </div>
+
+            <div>
+                <label class="block font-medium mb-1">Sinopse</label>
+                <input type="text" name="synopsis" placeholder="Sinopse do Livro" value="{{ $book->synopsis }}"class="w-full px-4 py-2 rounded-[10vw] bg-white border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500">
+            </div>
+
+            <div>
+                <label class="block font-medium mb-1">Gênero</label>
+                <input type="number" name="genero" placeholder="Gênero do Livro" value="{{ $book->genero }}"class="w-full px-4 py-2 rounded-[10vw] bg-white border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500">
+            </div>
+
+            <div>
+                <label class="block font-medium mb-1">Publico Alvo</label>
+                <input type="text" name="public" placeholder="Publico Alvo" value="{{ $book->public}}" class="w-full px-4 py-2 rounded-[20vw] bg-white border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500">
+            </div>
             
-        <label>Nome</label> 
-        <input type="text" name='name' placeholder="Seu nome" value='{{ $book->name}} ' > 
-        
-        <label>Autor</label> 
-        <input type="text" name='author' placeholder="autor" value='{{ $book->author}}' > 
-        
-        <label>Numeros de Páginas</label> 
-        <input type="number" name='pages' placeholder="Numero de páginas" value='{{ $book->pages}}'> 
-        
-        <label>Editora</label> 
-        <input type="text" name='publisher' placeholder="Editora que o publica" value='{{ $book->publisher}}' > 
-        
-        <label>Universo</label> 
-        <input type="text" name='universe' placeholder="Universo de Origem" value='{{ $book->universe }}' > 
-        
-        <label>Sinopse</label> 
-        <input type="text" name='synopsis' placeholder="Sinopse do livro"  value='{{ $book->synopsis}}'> 
-        
-        <label>Gênero</label> 
-        <input type="text" name='genero' placeholder="Gênero do livro" value='{{ $book->genero}}'> 
-        
-        <label>Publico alvo</label> 
-        <input type="text" name='public' placeholder="Publico Alvo" value='{{ $book->public}}'> 
-        
-        <button type="submit">Enviar</button> 
-    </form> 
+
+            <button type="submit" class="w-full bg-slate-700 text-white py-2 rounded hover:bg-slate-600 transition font-semibold">
+                Enviar
+            </button>
+
+        </form>
+
+        <div class="mt-4 text-center">
+            <a href="{{ route('books.index') }}" class="text-cyan-600 hover:underline">← Voltar</a>
+        </div>
+
+    </div>
+
+</div>
 
 @endsection
+    
+
+
+

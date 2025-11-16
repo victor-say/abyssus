@@ -1,7 +1,7 @@
 @extends('author.layouts.app')
 
 @section('title', 'Editar Autor')
-
+ 
 @section('content')
 
     
