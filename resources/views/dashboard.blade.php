@@ -75,6 +75,8 @@
                     O que você deseja ver hoje ?
                 </p>
 
+
+                <div class="text-blue-500">
                     @if (session()->has('success'))
                         {{ session('success')}}        
                     @endif
@@ -82,6 +84,9 @@
                     @if (session('message'))
                         <p>{{ session('message') }}</p>
                     @endif
+                </div>
+
+
             </div>
     
 

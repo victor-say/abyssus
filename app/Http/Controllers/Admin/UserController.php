@@ -36,7 +36,10 @@ class UserController extends Controller
             'password' => Hash::make($data['password']),
         ]);
 
-        Auth::login($user);
+        if(!Auth::check()){
+            Auth::login($user);
+        }
+
 
         return redirect()->route('dashboard') -> with('success', ' Usuário criado com sucesso');
     }
