@@ -56,7 +56,7 @@
 
             <div>
                 <label class="block font-medium mb-1">Gênero</label>
-                <input type="number" name="genero" placeholder="Gênero do Livro" value="{{ $book->genero }}"class="w-full px-4 py-2 rounded-[10vw] bg-white border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500">
+                <input type="text" name="genero" placeholder="Gênero do Livro" value="{{ $book->genero }}"class="w-full px-4 py-2 rounded-[10vw] bg-white border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500">
             </div>
 
             <div>

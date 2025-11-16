@@ -4,40 +4,69 @@
 
 @section('content')
 
-    <h1>Cadastrar Novo Universo</h1>
 
     
-    @if ($errors->any)
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    @endif
+    <div class="min-h-screen bg-gray-400 flex items-center justify-center p-6">
+
+    <div class="w-full max-w-xl bg-zinc-300 p-8 rounded-lg shadow-lg shadow-indigo-500/50">
+
+        <h1 class="text-2xl font-bold text-center mb-6">Cadastrar Novo Universo</h1>
 
 
+        @if ($errors->any())
+            <ul class="mb-4 bg-red-100 text-red-700 px-4 py-3 rounded">
+                @foreach ($errors->all() as $error)
+                    <li class="text-sm">• {{ $error }}</li>
+                @endforeach
+            </ul>
+        @endif
 
-    <form action="{{route('universes.store')}}" method="post">
-        @csrf
-        <label>Nome</label>
-        <input type="text" name="name" placeholder="Nome do Universo" value="{{old('name')}}">
+        <form action="{{ route('universes.store') }}" method="POST" class="space-y-4 ">
+            @csrf
 
-        <label>Autor</label>
-        <input type="text" name="author" placeholder="Nome do Autor do Universo" value="{{old('author')}}">
+            <div>
+                <label class="block font-medium mb-1">Nome</label>
+                <input type="text" name="name" placeholder="Nome do universo" value="{{ old('name') }}" class="w-full px-4 py-2 rounded-full bg-white border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500">
+            </div>
 
-        <label>Personagens</label>
-        <input type="text" name="personagens" placeholder="Personagens do Universo" value="{{old('personagens')}}">
 
-        <label>Livros em que Aparace</label>
-        <input type="text" name="books" placeholder="Livros que apresentam o Universo" value="{{old('books')}}">
+            <div>
+                <label class="block font-medium mb-1">Autor</label>
+                <input type="text" name="author" placeholder="Autor que o Escreveu" value="{{ old('author') }}"class="w-full px-4 py-2 rounded-[10vw] bg-white border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500">
+            </div>
 
-        <label>Conceitos Importantes</label>
-        <input type="text" name="conceitos" placeholder="Conceitos do Universo" value="{{old('conceitos')}}">
+            <div>
+                <label class="block font-medium mb-1">Personagens</label>
+                <input type="text" name="personagens" placeholder="Personagens Do universo" value="{{ old('personagens') }}"class="w-full px-4 py-2 rounded-[10vw] bg-white border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500">
+            </div>
 
-        <button type="submit">Enviar</button>
-    </form>
-    
-    
+            <div>
+                <label class="block font-medium mb-1">Livro em que Aparece</label>
+                <input type="text" name="books" placeholder="livro em que aparece" value="{{ old('books')}}" class="w-full px-4 py-2 rounded-[20vw] bg-white border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500">
+            </div>
+            
+            <div>
+                <label class="block font-medium mb-1">Conceitos</label>
+                <input type="text" name="conceitos" placeholder="conceitos do universo" value="{{ old('conceitos')}}" class="w-full px-4 py-2 rounded-[20vw] bg-white border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500">
+            </div>
+
+
+            <button type="submit" class="w-full bg-slate-700 text-white py-2 rounded hover:bg-slate-600 transition font-semibold">
+                Enviar
+            </button>
+
+        </form>
+
+        <div class="mt-4 text-center">
+            <a href="{{ route('universes.index') }}" class="text-cyan-600 hover:underline">← Voltar</a>
+        </div>
+
+    </div>
+
+</div>
 
 @endsection
     
+
+
+
