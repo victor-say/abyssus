@@ -26,30 +26,33 @@ class SolicitationController extends Controller
     }
 
 
+    // public function store(StoreSolicitationRequest $request)
+    // {
+        
+        
+    //     Solicitation::create($request->only([
+    //         'id_user'   => auth()->id(),
+    //         'ask_'      => $request->ask_,
+    //         'type_'     => $request->type_,
+    //         'data_hora' => Carbon::now(), 
+    //     ]));
+        
+
+    //     return redirect()->route('solicitations.index') ->with('success' , 'Solicitação Criada Com Sucesso');
+    // }
     public function store(StoreSolicitationRequest $request)
     {
-        
-        
-        Solicitation::create($request->only([
-            'id_user'   => auth()->id(),
-            'ask_'      => $request->ask_,
-            'type_'     => $request->type_,
-            'data_hora' => Carbon::now(), 
-        ]));
-        
-        // $data = $request;
+        // $data = $request->validated();
+        // $data['id_user'] = auth()->id();
 
-        // $data_hora = Carbon::createFromFormat('Y-m-d\TH:i', $request->data_hora);
+        $data = $request->except('data_hora_up');
+        $data['id_user'] = auth()->id();
 
 
-        // Solicitation::create([
-        //     'id_user'=> auth()->id(),
-        //     'ask_'=> $data['ask_'],
-        //     'type_'=> $data['type_'],
-        //     'data_hora' => Carbon::now(),
-        // ]);
 
-        return redirect()->route('solicitations.index') ->with('success' , 'Solicitação Criada Com Sucesso');
+        Solicitation::create($data);
+
+        return redirect()->route('solicitations.index')->with('success', 'Solicitação criada!');
     }
 
 

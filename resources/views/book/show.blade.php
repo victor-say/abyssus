@@ -23,7 +23,7 @@
 
 
         <ul class=" text-lg space-y-3 text-slate-900">
-            <li><strong class="font-semibold   text-blue-950">ID:</strong> {{ $book->id }}</li>
+            {{-- <li><strong class="font-semibold   text-blue-950">ID:</strong> {{ $book->id }}</li> --}}
             <li><strong class="font-semibold   text-blue-950">Nome:</strong> {{ $book->name }}</li>
             <li><strong class="font-semibold   text-blue-950">Autor:</strong> {{ $book->author }}</li>
             <li><strong class="font-semibold   text-blue-950">Gênero:</strong> {{ $book->genero }}</li>
