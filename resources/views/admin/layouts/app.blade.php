@@ -8,7 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>@yield('title') - Abyssus</title>
 </head>
-<body>
+<body  class='font-mono'>
     <header></header>
     @yield('content')
     <footer></footer>

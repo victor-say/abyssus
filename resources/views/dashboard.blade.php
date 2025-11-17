@@ -92,7 +92,7 @@
 
         </header>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {{-- <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
 
             <div class="bg-zinc-300 p-6 rounded-lg shadow-lg shadow-indigo-500/50">
                 <h3 class="text-xl font-semibold">Books</h3>
@@ -117,6 +117,35 @@
                     <a href="{{ route('authors.index')}}" class="text-cyan-500">Authors</a>
                 </p>
 
+            </div>
+
+        </div> --}}
+
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+            <div class="bg-zinc-300 p-6 rounded-xl shadow-lg shadow-indigo-500/30 transition-all duration-300 hover:scale-105 hover:shadow-indigo-500/80 hover:-translate-y-1">
+                <h3 class="text-xl font-semibold">Books</h3>
+                <p>
+                    Explore
+                    <a href="{{ route('books.index')}}" class="text-cyan-600 underline">Livros</a>
+                </p>
+            </div>
+
+            <div class="bg-zinc-300 p-6 rounded-xl shadow-lg shadow-indigo-500/30 transition-all duration-300 hover:scale-105 hover:shadow-indigo-500/80 hover:-translate-y-1">
+                <h3 class="text-xl font-semibold">Universes</h3>
+                <p>
+                    Explore
+                    <a href="{{ route('universes.index')}}" class="text-cyan-600 underline">Universos</a>
+                </p>
+            </div>
+
+            <div class="bg-zinc-300 p-6 rounded-xl shadow-lg shadow-indigo-500/30 transition-all duration-300 hover:scale-105 hover:shadow-indigo-500/80 hover:-translate-y-1">
+                <h3 class="text-xl font-semibold">Authors</h3>
+                <p>
+                    Explore
+                    <a href="{{ route('authors.index')}}" class="text-cyan-600 underline">Autores</a>
+                </p>
             </div>
 
         </div>
