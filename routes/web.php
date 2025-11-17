@@ -49,6 +49,7 @@ Route::get('/', function () {
 Route::middleware('auth')->group(function() {    
     Route::get('/books',[BookController::class, 'index'])->name('books.index');
     Route::get('/books/{book}/delalheis', [BookController::class, 'show'])->name('books.show');
+    Route::get('/books/{book}/read/synopsis', [BookController::class, 'synopsis'])->name('books.synopsis');
 });
 Route::middleware(CheckIfIsAdmin::class)->group(function () {
     Route::get('/books/create', [BookController::class, 'create'])->name('books.create');

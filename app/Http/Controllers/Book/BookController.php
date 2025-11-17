@@ -40,6 +40,16 @@ class BookController extends Controller
         return view('book.show', compact('book'));
     }
 
+    public function synopsis(string $id)
+    {
+        if(!$book = Book::find($id)){
+            return redirect()->route('books.index')->with('message', 'Livro não foi encontrado');
+        }
+
+        return view('book.read', compact('book'));
+    }
+    
+
 
     public function edit(string $id)
     {
