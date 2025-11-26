@@ -45,7 +45,7 @@
                 </svg>
             </a>
 
-            @can('is-admin')
+            @can('auth')
 
 
             <button type="button"onclick="confirmDelete({{ $book->id }})"  class="inline-flex items-center gap-1 px-3 py-1 bg-red-600 text-white text-sm rounded hover:bg-red-800 transition-colors">
