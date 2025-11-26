@@ -26,8 +26,7 @@
                 </div>
             </a>
             
-            @can('is-admin')
-            
+        
             <a href="{{route('users.index')}}"   class="block px-4 py-2 hover:bg-gray-200 rounded text-lg text-justify">
                 <div class="flex">
                     <div class="flex-1 ">
@@ -42,7 +41,7 @@
                 </div>
             </a>
 
-            @endcan
+          
 
 
             <a href="{{route('solicitations.index')}}" class="block px-4 py-2 hover:bg-gray-200 rounded text-lg   text-justify">
