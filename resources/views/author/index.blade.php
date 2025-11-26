@@ -98,7 +98,7 @@
                 <p class="mt-3 text-blue-600 font-medium">{{ session('message') }}</p>
             @endif
 
-            @can('is-admin')
+
                 <div class="mt-4">
                     <a href="{{ route('authors.create')}}" 
                        class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500 text-white font-medium rounded hover:bg-cyan-600 transition-colors">
@@ -108,7 +108,7 @@
                         Novo Autor
                     </a>
                 </div>
-            @endcan
+
         </header>
 
 
