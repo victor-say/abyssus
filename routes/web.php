@@ -51,7 +51,7 @@ Route::middleware('auth')->group(function() {
     Route::get('/books/{book}/delalheis', [BookController::class, 'show'])->name('books.show');
     Route::get('/books/{book}/read/synopsis', [BookController::class, 'synopsis'])->name('books.synopsis');
 });
-Route::middleware(CheckIfIsAdmin::class)->group(function () {
+Route::middleware('auth')->group(function () {
     Route::get('/books/create', [BookController::class, 'create'])->name('books.create');
     Route::post('/books', [BookController::class, 'store'])->name('books.store');
     Route::get('/books/{book}/edit', [BookController::class, 'edit'])->name('books.edit');
@@ -66,7 +66,7 @@ Route::middleware('auth')->group(function() {
     Route::get('/authors/{author}/delalheis', [AuthorController::class, 'show'])->name('authors.show');
 });
 
-Route::middleware(CheckIfIsAdmin::class)->group(function () {
+Route::middleware('auth')->group(function () {
     Route::get('/authors/create', [AuthorController::class, 'create'])->name('authors.create');
     Route::post('/authors', [AuthorController::class, 'store'])->name('authors.store');
     Route::get('/authors/{author}/edit', [AuthorController::class, 'edit'])->name('authors.edit');
@@ -81,7 +81,7 @@ Route::middleware('auth')->group(function() {
     Route::get('/universes/{universe}/delalheis', [UniverseController::class, 'show'])->name('universes.show');
 });
 
-Route::middleware(CheckIfIsAdmin::class)->group(function () {
+Route::middleware('auth')->group(function () {
     Route::get('/universes/create', [UniverseController::class, 'create'])->name('universes.create');
     Route::post('/universes', [UniverseController::class, 'store'])->name('universes.store');
     Route::get('/universes/{universe}/edit', [UniverseController::class, 'edit'])->name('universes.edit');
