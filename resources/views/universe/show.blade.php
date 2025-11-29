@@ -34,8 +34,7 @@
 
         <div class="flex gap-4 mt-8">
 
-                                    
-            @can('auth')
+
                 <a href="{{ route('universes.edit', $universe->id) }}" class="inline-flex items-center gap-1 px-3 py-1 bg-orange-700 text-white text-sm rounded hover:bg-orange-400 transition-colors">                            
                     Editar
 
@@ -58,7 +57,7 @@
                     @method('DELETE')
                 </form>
 
-            @endcan
+
 
         </div>
 
