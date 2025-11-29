@@ -72,6 +72,7 @@
 
                                     </a>
                                 </td>
+                                
                                 <td class="px-6 py-3 text-center">
                                     <a href="{{ route('users.show', $user->id) }}" class="inline-flex items-center gap-1 px-3 py-1 bg-blue-800 text-white text-sm rounded hover:bg-blue-600 transition-colors">
                                         Detalhes
