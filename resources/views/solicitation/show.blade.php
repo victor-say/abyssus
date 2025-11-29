@@ -29,10 +29,8 @@
             <li><strong class="font-semibold   text-blue-950">Ultima Vez Que Foi Editada:</strong> {{ \Carbon\Carbon::parse($solicitation->data_hora_up)->format('d/m/Y H:i') ?? 'Anda não foi Editada' }}</li>
     
     
-    @can('is-admin')
             <li><strong class="font-semibold   text-blue-950">Quem Criou a Solicitação:</strong> {{ $solicitation->id_user }}</li>
-            <li><strong class="font-semibold   text-blue-950">Id da Solicitação:</strong> {{ $solicitation->id }}</li>
-    @endcan
+
         </ul>
 
         <div class="flex gap-4 mt-8">
@@ -46,7 +44,7 @@
                 </svg>
             </a>
 
-            @can('auth')
+
 
 
             <button type="button"onclick="confirmDelete({{ $solicitation->id }})"  class="inline-flex items-center gap-1 px-3 py-1 bg-red-600 text-white text-sm rounded hover:bg-red-800 transition-colors">
@@ -63,7 +61,7 @@
                 @method('DELETE')
             </form>
 
-            @endcan
+
 
         </div>
 
