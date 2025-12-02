@@ -36,7 +36,7 @@
             @endif
 
             <div class="mt-4">
-                <a href="{{ route('solicitations.create')}}" class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500 text-white font-medium rounded hover:bg-cyan-600 transition-colors">
+                <a href="{{ route('solicitations.create')}}" class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500 text-white font-medium rounded hover:bg-cyan-600 transition-colors hover:-translate-y-1">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z" />
                     </svg>
@@ -65,7 +65,7 @@
                                 <td class="px-6 py-3">{{ $solicitation->ask_ }}</td>
                                 <td class="px-6 py-3">{{ $solicitation->type_ }}</td>
                                 <td class="px-6 py-3 text-center">
-                                    <a href="{{ route('solicitations.edit', $solicitation->id) }}" class="inline-flex items-center gap-1 px-3 py-1 bg-orange-700 text-white text-sm rounded hover:bg-orange-400 transition-colors">
+                                    <a href="{{ route('solicitations.edit', $solicitation->id) }}" class="inline-flex items-center gap-1 px-3 py-1 bg-orange-700 text-white text-sm rounded hover:bg-orange-400 transition-colors hover:-translate-y-1">
                                         Editar
 
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -75,7 +75,7 @@
                                     </a>
                                 </td>
                                 <td class="px-6 py-3 text-center">
-                                    <a href="{{ route('solicitations.show', $solicitation->id) }}" class="inline-flex items-center gap-1 px-3 py-1 bg-blue-800 text-white text-sm rounded hover:bg-blue-600 transition-colors">
+                                    <a href="{{ route('solicitations.show', $solicitation->id) }}" class="inline-flex items-center gap-1 px-3 py-1 bg-blue-800 text-white text-sm rounded hover:bg-blue-600 transition-colors hover:-translate-y-1">
                                         Detalhes
 
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">

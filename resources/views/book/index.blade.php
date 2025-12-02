@@ -69,7 +69,7 @@
                                 <td class="px-6 py-3 text-left">{{ $book->public }}</td>
 
                                 <td class="px-6 py-3 text-center">
-                                    <a href="{{ route('books.edit', $book->id) }}" class="inline-flex items-center gap-1 px-3 py-1 bg-orange-700 text-white text-sm rounded hover:bg-orange-400 transition-colors">
+                                    <a href="{{ route('books.edit', $book->id) }}" class="inline-flex items-center gap-1 px-3 py-1 bg-orange-700 text-white text-sm rounded hover:bg-orange-400 transition-colors hover:-translate-y-1">
                                         Editar
 
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -79,7 +79,7 @@
                                     </a>
                                 </td>
                                 <td class="px-6 py-3 text-center">
-                                    <a href="{{ route('books.show', $book->id) }}" class="inline-flex items-center gap-1 px-3 py-1 bg-blue-800 text-white text-sm rounded hover:bg-blue-600 transition-colors">
+                                    <a href="{{ route('books.show', $book->id) }}" class="inline-flex items-center gap-1 px-3 py-1 bg-blue-800 text-white text-sm rounded  hover:bg-blue-600 transition-colors hover:-translate-y-1">
                                         Detalhes
 
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
