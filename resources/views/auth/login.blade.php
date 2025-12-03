@@ -1,4 +1,4 @@
-<x-guest-layout>
+{{-- <x-guest-layout>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
@@ -44,4 +44,75 @@
             </x-primary-button>
         </div>
     </form>
+</x-guest-layout> --}}
+<x-guest-layout>
+
+<div 
+    {{-- class="min-h-screen bg-gray-400 flex items-center justify-center p-6" --}}
+    class="min-h-screen flex items-center justify-center p-6"
+    >
+
+    <div class="w-full max-w-xl bg-zinc-300 p-8 rounded-lg shadow-lg shadow-indigo-500/50">
+
+        <h1 class="text-2xl font-bold text-center mb-6">Login</h1>
+
+        <!-- Status -->
+        <x-auth-session-status class="mb-4" :status="session('status')" />
+
+        <!-- Errors -->
+        @if ($errors->any())
+            <ul class="mb-4 bg-red-100 text-red-700 px-4 py-3 rounded">
+                @foreach ($errors->all() as $error)
+                    <li class="text-sm">• {{ $error }}</li>
+                @endforeach
+            </ul>
+        @endif
+
+        <form method="POST" action="{{ route('login') }}" class="space-y-4">
+            @csrf
+
+            <div>
+                <label class="block font-medium mb-1">E-mail</label>
+                <input type="email" 
+                       name="email" 
+                       value="{{ old('email') }}" 
+                       required autofocus 
+                       class="w-full px-4 py-2 rounded-full bg-white border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500">
+            </div>
+
+            <div>
+                <label class="block font-medium mb-1">Senha</label>
+                <input type="password" 
+                       name="password" 
+                       required 
+                       class="w-full px-4 py-2 rounded-full bg-white border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500">
+            </div>
+
+            <div class="flex items-center justify-between text-sm">
+                <label class="flex items-center gap-2">
+                    <input type="checkbox" name="remember">
+                    <span>Lembrar-me</span>
+                </label>
+
+                @if (Route::has('password.request'))
+                    <a class="text-cyan-600 hover:underline" href="{{ route('password.request') }}">
+                        Esqueceu a senha?
+                    </a>
+                @endif
+            </div>
+
+            <button type="submit" class="w-full bg-slate-700 text-white py-2 rounded hover:bg-slate-600 transition font-semibold">
+                Entrar
+            </button>
+
+        </form>
+
+        <div class="mt-4 text-center">
+            <a href="{{ route('register') }}" class="text-cyan-600 hover:underline">Criar conta</a>
+        </div>
+
+    </div>
+
+</div>
+
 </x-guest-layout>
