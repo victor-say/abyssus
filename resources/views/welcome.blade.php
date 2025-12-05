@@ -297,8 +297,8 @@
 
     <div class="relative z-10 flex flex-col min-h-screen">
 
-        {{-- <div class="flex justify-end p-6"> --}}
-            {{-- @if (Route::has('login'))
+        <div class="flex justify-end p-6">
+            @if (Route::has('login'))
                 <div class="space-x-4">
 
                     @auth
@@ -321,11 +321,11 @@
                     @endauth
 
                 </div>
-            @endif --}}
-        {{-- </div> --}}
+            @endif
+        </div>
 
 
-        <div class="flex items-center justify-center flex-1 px-4">
+        {{-- <div class="flex items-center justify-center flex-1 px-4">
 
             <div class="w-full max-w-2xl text-center bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl rounded-3xl p-12">
 
@@ -360,7 +360,7 @@
 
             </div>
 
-        </div>
+        </div> --}}
 
     </div>
 

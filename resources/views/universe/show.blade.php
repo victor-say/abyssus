@@ -35,7 +35,7 @@
         <div class="flex gap-4 mt-8">
 
 
-                <a href="{{ route('universes.edit', $universe->id) }}" class="inline-flex items-center gap-1 px-3 py-1 bg-orange-700 text-white text-sm rounded hover:bg-orange-400 transition-colors">                            
+                <a href="{{ route('universes.edit', $universe->id) }}" class="inline-flex items-center gap-1 px-3 py-1 bg-orange-700 text-white text-sm rounded hover:bg-orange-400 transition-colors hover:-translate-y-1"">                            
                     Editar
 
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -43,7 +43,7 @@
                     </svg>
                 </a>
 
-                <button type="button"onclick="confirmDelete({{ $universe->id }})"  class="inline-flex items-center gap-1 px-3 py-1 bg-red-600 text-white text-sm rounded hover:bg-red-800 transition-colors">
+                <button type="button"onclick="confirmDelete({{ $universe->id }})"  class="inline-flex items-center gap-1 px-3 py-1 bg-red-600 text-white text-sm rounded hover:bg-red-800 transition-colors hover:-translate-y-1"">
                     Excluir
 
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
